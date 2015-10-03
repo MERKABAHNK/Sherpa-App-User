@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sherpa</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="logo">Sherpa Logo</string>
+    <string name="welcome">Hello</string>
+    <string name="user">User</string>
+    <string name="passwd">Password</string>
+    <string name="forgotPass">Forgot your Password</string>
+    <string name="st_accept">Ok</string>
+
+    <color name="white">#fff</color>
+
+    <string name="log_in">Login</string>
+    <string name="new_account">Register</string>
+    <string name="reg_label">Registration details.</string>
+    <string name="fst_name">Name</string>
+    <string name="lst_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="st_address">Address</string>
+    <string name="cellphone">Cell Number</string>
+    <string name="conf_passwd">Confirm Password </string>
+    <string name="register">Register</string>
+    <string name="accept_term_cond">Accept Terms &amp; Conditions</string>
+    <string name="msg_detail_userExists">The user/mail already exists.</string>
+    <string name="action_help">help</string>
+    <string name="delivery_service">Request Service</string>
+    <string name="main_menu_msg">Hello! How can we help?</string>
+    <string name="hour_service">Sherpa by hour</string>
+    <string name="lb_from">Origin</string>
+    <string name="lb_to">Destination</string>
+    <string name="different_format">My address has different format</string>
+    <string name="st_contact_subj">Contact Sherpa</string>
+
+    <string-array name="street_type">
+        <item>  - </item>
+        <item>Calle - CL</item>
+        <item>Carrera - KR</item>
+        <item>Diagonal - DG</item>
+        <item>Transversal - TV</item>
+        <item>Avenida - AV</item>
+        <item>Autopista - AU</item>
+        <item>Avenida Calle - AC</item>
+        <item>Avenida Carrera - AK</item>
+        <item>Bulevar - BL</item>
+        <item>Carretera - CT</item>
+        <item>Circular - CQ</item>
+        <item>Circunvalar - CV</item>
+        <item>Pasaje - PJ</item>
+        <item>Paseo - PS</item>
+        <item>Peatonal - PT</item>
+        <item>Troncal - TC</item>
+        <item>Variante - VT</item>
+        <item>Vía - VI</item>
+    </string-array>
+
+    <string name="title_activity_overlay">OverlayActivity</string>
+    <string name="title_activity_detailed_service">Service Details</string>
+    <string name="title_activity_waiting_for_sherpa">Waiting for Sherpa</string>
+    <string name="title_activity_service_in_action">Service in Process</string>
+    <string name="title_activity_special_service">SpecialServiceActivity</string>
+    <string name="title_activity_splash_sreen">Sherpa</string>
+    <string name="title_activity_new_account">Register</string>
+    <string name="title_activity_main_menu">Menu</string>
+    <string name="title_activity_deliver_map">New Service</string>
+    <string name="title_activity_menu"></string>
+    
+    <string name="st_address_detail">Floor, Apartment, Block, etc</string>
+    <string name="st_service_detail">Service Detail</string>
+    <string name="st_loading_map">Loading Map &#8230;</string>
+    <string name="st_add_destination">add Destination</string>
+    <string name="st_searching">Searching &#8230;</string>
+    <string name="tip_move_maker">Press and Hold to drag mark and edit position</string>
+    <string name="st_press">  Press &#8230; </string>
+    <string name="st_hold">  Hold &#8230;  </string>
+    <string name="st_drag">  Drag.  </string>
+    <string name="route_summary">Service Details</string>
+    <string name="st_request">Request</string>
+    <string name="st_view_detail">detail</string>
+    <string name="st_route_confirmation">Please Confirm Service Request</string>
+    <string name="st_confirmation_add_message"></string>
+    <string name="st_cancel_delivery">Cancel Service</string>
+    <string name="st_offer_tip">Offer Tip</string>
+    <string name="st_hide_detail">hide detial</string>
+    <string name="st_calculating">Calculating &#8230;</string>    
+    <string name="st_sherpa_in_the_way"></string>
+    <string name="st_service_code">Service ID - </string> 
+    <string name="st_contact_us">Contact us</string>
+    <string name="st_your_sherpa">Sherpa</string>
+    <string name="st_call_my_sherpa">Call Sherpa</string>
+    <string name="st_where_is_my_sherpa">Where is my Sherpa</string>
+    <string name="st_ask_location">Request Location</string>
+    <string name="st_manually_reported">Sherpa reported manually ..</string>
+    <string name="st_service_finished">Finished Service</string>
+    <string name="st_wanto_qualify"></string>
+    <string name="st_comments">Observations</string>
+    <string name="st_qualify">Rate</string>
+    <string name="st_finilize">Finish</string>
+    <string name="st_available">At Your Service</string>
+    <string name="st_origin_point">Origin Point</string>
+    <string name="st_current_gps">actual GPS</string>
+    <string name="st_starting_date">Starting date</string>
+    <string name="st_service_type">Service Type</string>
+	<string name="st_use_map">Use Map</string>
+	<string name="st_use_form">Use Form</string>
+	<string name="st_place_mark_on_map">Place mark on map</string>
+	<string name="st_day">Day</string>
+	<string name="st_week">Week</string>
+	<string name="st_month">Month</string>
+	<string name="st_customize">Costumize</string>
+	<string name="st_sherpa_app">Sherpa app</string>
+    <string name="st_terms_conditions">Terms &amp; Conditions</string>
+    <string name="st_update_profile">Update Profile</string>
+    <string name="st_log_out">Close Session</string>
+    <string name="st_about_us">About Sherpa</string>
+    <string name="st_profile">Profile</string>
+    <string name="st_contact">Contact us</string>
+    <string name="st_loading_session">Loading Session</string>
+    <string name="st_connecting">Connecting &#8230;</string>
+    <string name="st_updating">Updating &#8230;</string>
+    <string name="st_missingFileds_part1">The following fields</string>
+    <string name="st_missingFileds_part2">are empty</string>
+    <string name="st_title_conctact">Sherpa: Send contact message &#8230;</string>
+    <string name="st_error_noMsgSvc">There is no message service installed on your device.</string>
+    
+    <string name="st_title_closeSessionQ">Confirm Session Closing?</string>
+    <string name="st_subtitle_closeSessionQ">You will have to login again to see any pendant service.</string>
+    <string name="st_title_cancelServiceQ">Confirm Service Cancellation?</string>
+    <string name="st_subtitle_cancelServiceQ">"This action cannot be undone."</string>
+    
+    <string name="msg_serverError_title">Connection Error</string>
+	<string name="msg_login_title">Sherpa Login</string>
+	<string name="msg_auth_title">Authentication Error</string>
+	<string name="msg_savingSession_title">Error Saving Session</string>
+    <string name="msg_savingData_title">Error Saving Session</string>
+	<string name="msg_title_rememberPswd">Remember Password</string>
+	<string name="msg_title_register">Sherpa Register</string>
+	<string name="msg_title_serviceCompleted">Finished Service</string>
+    <string name="msg_title_success">Success</string>
+    <string name="msg_Error_title">Error</string>
+
+	
+    <string name="msg_userpasswrong">Invalid user or password.</string>
+	<string name="msg_cyphererror">Security coding Error.</string>
+	<string name="msg_serverError">Server Connection Error.</string>
+	<string name="msg_register_succsess">Successfully Registered!!</string>
+	<string name="msg_detail_taxes">Retrieving current prices.</string>
+	<string name="msg_detail_noUsrPswd">Please insert user and password.</string>
+	<string name="msg_detail_internal">internal Error.</string>
+	<string name="msg_connectionError">No Internet Connection Detected.</string>
+	<string name="msg_detail_notReg">This user is not registered.</string>
+	<string name="msg_detail_emailSent">You will receive an email with your password.</string>
+	<string name="msg_detail_remNoUsr">Please fill you user(email), You will receive an email with your password.</string>
+    <string name="msg_detail_invalidEmail">Invalid Email address.</string>
+    <string name="msg_detail_pswdMissmatch">Please make sure your passwords match</string>
+    <string name="msg_detail_acceptTerms">Please accept Terms &amp; Conditions to continue</string>
+    <string name="msg_detail_thaksMsg"></string>
+    <string name="msg_detail_mapWrongFormat">Error while consulting the maps.</string>
+    <string name="msg_detail_infoSaved">Information updated!.</string>
+    <string name="msg_detail_info_not_Saved">Information not updated!.</string>
+    <string name="msg_detail_noPermission">No permition Granted to place calls!.</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main">Splash</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_google_map">Map</string>
+    <string name="msg_noResult">No Result Found</string>
+    <string name="title_activity_register">RegisterActivity</string>
+</resources>

@@ -1,0 +1,498 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id = "@+id/mapHolder"
+    tools:context="com.fr3estudio.sherpa.sherpav3p.MapActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/mapInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/addresses_info"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick=""
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/addi_dest"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_from_to_s_off"
+                    android:onClick="fromClicked"
+                    android:text="@string/lb_from"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/span_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/span" />
+
+                <LinearLayout
+                    android:id="@+id/normal_address_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <EditText
+                        android:id="@+id/usaAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/fondo_input_gris"
+                        android:ems="10"
+                        android:hint="@string/st_address" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" >
+
+                        <Spinner
+                            android:id="@+id/tipo_via"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:entries="@array/street_type" />
+
+                        <EditText
+                            android:id="@+id/r_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/fondo_input_gris"
+                            android:ems="10"
+                            android:nextFocusDown="@+id/r_last_name"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/hash_tag_lb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#" />
+
+                        <EditText
+                            android:id="@+id/r_last_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/fondo_input_gris"
+                            android:ems="10"
+                            android:nextFocusDown="@+id/add_plat"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/lb_marker_move"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+
+                        <EditText
+                            android:id="@+id/add_plat"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/fondo_input_gris"
+                            android:ems="10"
+                            android:nextFocusDown="@+id/addr_compl"
+                            android:singleLine="true" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/addr_compl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/fondo_input_gris"
+                        android:ems="10"
+                        android:hint="@string/st_address_detail"
+                        android:nextFocusDown="@+id/r_service_deatail_f" />
+
+                    <EditText
+                        android:id="@+id/r_service_deatail_f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/fondo_input_gris"
+                        android:ems="10"
+                        android:hint="@string/st_service_detail"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPostalAddress" />
+
+                    <ImageView
+                        android:id="@+id/as_loading_ring"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:src="@drawable/span" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/bt_diff_address"
+                            android:layout_width="0dp"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="1dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bt_accept2"
+                            android:onClick="differentFormatFrom"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/accept_additional"
+                            android:layout_width="0dp"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bt_search"
+                            android:onClick="fromNormalAccepted" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/additional_destinations"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/addi_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_from_to_s_plus"
+                    android:onClick="addNewDestination"
+                    android:text="@string/st_add_destination"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/summary_route"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/summary_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_bt_light_blue_2"
+                    android:clickable="false"
+                    android:text="@string/route_summary"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/summary_route_IN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_bt_light_blue"
+                    android:gravity="center_vertical|center_horizontal" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/priceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_receip_price"
+                            android:gravity="center_vertical"
+                            android:text="15000.00"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/distanceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="2dp"
+                            android:background="@drawable/bg_receip_distance"
+                            android:gravity="center_vertical"
+                            android:text="15.00"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:background="@drawable/bt_detail"
+                        android:onClick="showDetail"
+                        android:text="@string/st_view_detail"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/on_select_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/home_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight="1"
+                    android:background="@drawable/bt_home"
+                    android:onClick="homeClicked" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/span" />
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    android:background="@drawable/bt_next" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/request_menu_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight="1"
+                    android:background="@drawable/bt_prev" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/span" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight="1"
+                    android:background="@drawable/bt_light_blue_s"
+                    android:onClick="requestButtonPressed"
+                    android:text="@string/st_request"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/detailFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:id="@+id/summary_route_det"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <Button
+                android:id="@+id/button1_det"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@drawable/bg_bt_light_blue_2"
+                android:clickable="false"
+                android:text="@string/route_summary"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/summary_route_IN_det"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_bt_light_blue"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/priceLabel_det"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_receip_price"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="?android:attr/actionBarSize" />
+
+                <TextView
+                    android:id="@+id/distanceLabel_det"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_receip_distance"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="?android:attr/actionBarSize" />
+
+                <Button
+                    android:id="@+id/button5_det"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bt_detail"
+                    android:focusable="false"
+                    android:onClick="hideDetail"
+                    android:text="@string/st_hide_detail"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_receipt_v2"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/scrollView1_det"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/destinationsHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/destinationsHolder1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/total_prc_rcp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_receip_price_blue" />
+
+                    <TextView
+                        android:id="@+id/total_dst_rcp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_receip_price_dist_blue" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/service_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_receip_obs" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/request_menu_1_det"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:visibility="visible" >
+
+            <Button
+                android:id="@+id/button2_det"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_prev"
+                android:onClick="hideDetail" />
+
+            <ImageView
+                android:id="@+id/imageView1_det"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:src="@drawable/span" />
+
+            <Button
+                android:id="@+id/button4_det"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_light_blue_s"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="requestButtonPressed"
+                android:text="@string/st_request"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

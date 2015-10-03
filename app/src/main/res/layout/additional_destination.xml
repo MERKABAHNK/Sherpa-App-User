@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<Button
+    android:id="@+id/addi_dest"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_from_to_del_s_off"
+    android:onClick="fromClicked"
+    android:text="@string/lb_to"
+    android:textColor="@color/white" />
+
+<TextView
+    android:id="@+id/isFilled"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0"
+    android:visibility="gone" />
+
+<ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:src="@drawable/span" />
+
+    <LinearLayout
+        android:id="@+id/normal_address_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <EditText
+            android:id="@+id/usaAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_input_gris"
+            android:ems="10"
+            android:hint="@string/st_address" >
+            
+        </EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <Spinner
+                android:id="@+id/tipo_via"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/street_type" />
+
+            <EditText
+                android:id="@+id/r_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/fondo_input_gris"
+                android:ems="10"
+                android:nextFocusDown="@+id/r_last_name"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/lb_searching"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:text="#" />
+
+            <EditText
+                android:id="@+id/r_last_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/fondo_input_gris"
+                android:ems="10"
+                android:nextFocusDown="@+id/add_plat"
+                android:singleLine="true" >
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/lb_marker_move"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/add_plat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true" 
+                android:background="@drawable/fondo_input_gris"
+                android:ems="10" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/addr_compl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_input_gris"
+            android:ems="10"
+            android:hint="@string/st_address_detail" />
+
+        <EditText
+            android:id="@+id/r_comments_add_f"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_input_gris"
+            android:ems="10"
+            android:imeOptions="actionDone"
+            android:hint="@string/st_service_detail"
+            android:inputType="textPostalAddress" >
+
+            
+        </EditText>
+
+        <TextView
+            android:id="@+id/add_dest_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+		    android:id="@+id/as_loading_ring"
+		    android:layout_width="match_parent"
+		    android:layout_height="3dp"
+		    android:src="@drawable/span" />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             >
+
+            <Button
+                android:id="@+id/bt_diff_address"
+                android:layout_width="0dp"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bt_accept2"
+                android:onClick="differentFormatFrom"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/accept_additional"
+                android:layout_width="0dp"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bt_search" />
+      
+        </LinearLayout>
+
+		
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/different_address_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <EditText
+            android:id="@+id/r_passwdr_f"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_search_dir"
+            android:ems="10"
+            android:hint="@string/st_address" />
+
+        <EditText
+            android:id="@+id/addr_dif_deta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/fondo_input_gris"
+            android:ems="10"
+            android:hint="@string/st_service_detail"
+            android:inputType="textMultiLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/bt_back_to_normal_address"
+                android:layout_width="0dp"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bt_back"
+                android:onClick="backToNormalFomartFrom" />
+
+            <Button
+                android:id="@+id/accept_df_additional"
+                android:layout_width="0dp"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bt_accept" />
+
+        </LinearLayout>
+
+    </LinearLayout>    
+
+</LinearLayout>

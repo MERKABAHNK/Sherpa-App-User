@@ -1,0 +1,12 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="gray">#ccc</color>
+    <color name="dark_gray">#999</color>
+    <color name="transparent">#00000000</color>
+    <color name="opaque">#33999999</color>
+    <color name="black">#000</color>
+    <color name="ligth_gray">#eee</color>
+    <color name="sherpa">#ffd400</color>
+	<color name="lblue_sherpa">#85d8e5</color>
+</resources>
